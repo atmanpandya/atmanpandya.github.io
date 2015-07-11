@@ -1,0 +1,17 @@
+[
+	{
+		"name":"KS Preeti",
+		"designation":"Manager",
+		"company":"Mahindra and Mahindra",
+		"testimonial":"It was great working with Atman. He understands the client needs and works as per the directive, without us putting too much effort in explaining. Would definitely engage with him for more work in the future!",
+		"img":"../img/testimonials/placeholder-profile.jpg"
+	},
+	{
+		"name":"Nidhi Trivedi",
+		"designation":"Manager",
+		"company":"Vodafone India",
+		"testimonial":"We wanted a minimalist invitation for our baby shower, and Atman gave us exactly how we wanted it!",
+		"img":"../img/testimonials/nidhi-trivedi.jpg"
+	}
+
+]

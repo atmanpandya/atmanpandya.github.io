@@ -1,0 +1,74 @@
+[
+	{
+		"name":"CSI India Industrial Visit",
+		"type":"Print",
+		"description": "The original poster for the trip used a single color palette. The one on the right was a concept creation to visualize the design in a more color rich context.",
+		"img":"img/portfolio/poster-1.png",
+		"link":""
+	},
+	{
+
+		"name":"Baby Shower Invitation",
+		"type":"Print",
+		"description": "The minimalist design for this invitation was composed at the behest of the client. The invite manages to convey all the required information in just a few small lines. The client and their invitees really liked the minimalist look !",
+		"img":"img/portfolio/invitation-1.png",
+		"link":""	
+	},
+	{
+
+		"name":"CSI-SPIT T-Shirt",
+		"type":"T-Shirt",
+		"description": "This design uses HTML tags to cater to the Computer centric college crowd who are a part of the Computer Society of India (CSI). The contrasting colors make the design stand out in a crowd!",
+		"img":"img/portfolio/tshirt-1.png",
+		"link":""	
+	},
+	{
+
+		"name": "FACE T-Shirt",
+		"type":"T-Shirt",
+		"description": "This t-shirt uses the matrix code to convey the idea of code compilation. Something that takes up quite a bit of time in the life of a computer student. The Computer Department loved the concept and it was well received by the students!",
+		"img":"img/portfolio/tshirt-2.png",
+		"link":""	
+	},
+	{
+
+		"name": "Sheldon - The Flash",
+		"type":"Illustration",
+		"description": "In this digital cartoon, we have Sheldon from The Big Bang Theory portrayed as a beefier version of the fastest man alive!",
+		"img":"img/portfolio/caricature-1.png",
+		"link":""	
+	},
+	{
+
+		"name":"Caricature",
+		"type":"Illustration",
+		"description": "A digital portrait caricature made as a gift for a friend. His parents absolutely loved the illustration!",
+		"img":"img/portfolio/caricature-2.png",
+		"link":""
+	},
+	{
+
+		"name": "CSI Magazine '13",
+		"type":"Print",
+		"description": "The annual magazine for CSI-SPIT is a display of modern minimalist design contrasted by a rich typography which is evident as you flip through the pages.",
+		"img":"img/portfolio/magazine-1.png",
+		"link":"https://onedrive.live.com/download?resid=9F363641991F88D9!7302&authkey=!APYDB-Gnzlt-w4w&ithint=file%2cpdf"	
+	},
+	{
+
+		"name": "Psy - Gangnam Style",
+		"type":"Illustration",
+		"description": "A cartoon of PSY, doing his most famous dance. This cartoon conveys the idea using minimal strokes and was made entirely on a tablet",
+		"img":"img/portfolio/illustration-1.png",
+		"link":""	
+	},
+	{
+
+		"name": "Angular JS",
+		"type":"Web Development",
+		"description": "A demo application built to portray the capabilities of the popular client side framework - Angular JS.",
+		"img":"img/portfolio/web-project-1.png",	
+		"link":"http://atmanpandya.github.io/angularjs/app/"
+	}
+
+]
