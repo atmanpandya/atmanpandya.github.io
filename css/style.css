@@ -5,6 +5,20 @@
     list-style: none;
 }
 
+::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 1em;
+}
+ 
+::-webkit-scrollbar-thumb {
+    background-color: #FF6600;
+
+}
+
 /*================================
 TYPOGRAPHY
 ================================*/
@@ -78,7 +92,6 @@ HERO AREA
     /*background: url(../img/trianglify-background.svg)no-repeat;*/ /*your background image*/
     color:black;
     max-height: 880px;
-    overflow: hidden;
     padding-bottom: 23%;
 }
 
@@ -95,12 +108,19 @@ HERO AREA
 }
 #personal-photo{
     border-radius: 100%;
-    width:200px;
-    height:200px;
-    color: white;
-    background-color: black;
+    width:13em;
+    height:13em;
+    background-color: white;
     margin: auto;
 }
+/* To prevent it from being covered by the about section*/
+@media only screen and (max-device-width: 600px) {
+    #hero {
+        overflow: visible;
+        padding-bottom: 200%;   
+    }
+}
+
 
 /*================================
 CLIENTS SECTION
@@ -123,7 +143,6 @@ CLIENTS SECTION
     display: inline;
     margin-right: 35px;
 }
-
 #clients li:last-child{
     margin-right: 0px;
 }
@@ -155,16 +174,6 @@ PORTFOLIO SECTION
     text-align: center;
 }
 
-
-
-@media only screen and (max-device-width: 700px) {
-    #portfolioItems {
-        clear: both;
-        width:95%;
-        min-width: 300px;
-    }
-}
-
 #portfolioItems li{
     /*min-width: 320px;*/
     margin-bottom: 2%;
@@ -173,11 +182,6 @@ PORTFOLIO SECTION
     height:320px;
     overflow:hidden;
     background-color: white;
-}
-
-#portfolioItems li:not(:first-child,:last-child) {
-  padding-right:7px;
-  padding-left:7px;
 }
 
 #portfolioItems li:hover{
@@ -280,81 +284,9 @@ footer p, footer .bigicon {color: #7e7e7e;}
 
 .footersocial li a {color: #7e7e7e;}
 .footersocial li a:hover {color: #ea9312;}
-
-/*================================
-FOLLOW BUTTON
-================================*/
-.dribbble-follow-button {
-	display: inline-block;
-    margin-top: 15px;
-}
-
-.dribbble-follow-button .label, .dribbble-follow-button .count {
-    font: bold 11px/18px 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    color: #333;
-    border: 1px solid #ccc;
-    text-decoration: none;
-    display: inline-block;
-    position: relative;
-    border-radius: 3px;
-}
-
-.dribbble-follow-button .label {
-    padding: 0 3px 0 1px;
-    white-space: nowrap;
-    background: #e3e3e3;
-    background: linear-gradient(top, white, #dedede);
-}
-
-.dribbble-follow-button .label i {
-    height: 18px;
-    width: 18px;
-    float: left;
-
-    background: url(../img/icon.png) no-repeat top left;
-}
-
-.dribbble-follow-button .label:hover {
-    border-color: #bbb;
-    background: #fff;
-    color: #333;
-}
-
-.dribbble-follow-button .label:active {            
-     box-shadow: 0 1px 5px rgba(0,0,0,.15) inset;
-}
-
-.dribbble-follow-button .count {
-    margin-left: 5px;
-    padding: 0 3px;
-    color: #333;
-    border-color: #bbb;
-    font-weight: normal;
-    background: white;
-}
-
-.dribbble-follow-button .count:hover {
-    text-decoration: underline;
-}
-
-.dribbble-follow-button .count > * {
-	top: 50%;
-	left: 0;
-	margin: -4px 0 0 -4px;
-	border: 4px solid transparent;
-	border-right-color: #aaa;
-	border-left: 0;
-	position: absolute;
-}
-
 /*=========================
 MODAL 
 ==========================*/
-
-
-.
-.ngdialog.ngdialog-theme-default.ngdialog-content{
-}
 
 .portfolio-details{
     padding: 1em;
@@ -372,9 +304,8 @@ MODAL
   line-height: 1.5em;
   margin: 0 auto;
   max-width: 100%;
-  padding: 1em 0em 1em 1em;
   position: relative;
-  width: 70%;
+  width: 80%;
   height:   95%;
   overflow-y: scroll;
   overflow-x: hidden; 
@@ -391,6 +322,13 @@ MODAL
         width:90%;
         overflow-y: hidden; 
     }
+}
+
+#data{
+    padding-right: 0px;
+}
+#images{
+    padding-left: 0px;
 }
 
 #images.img{

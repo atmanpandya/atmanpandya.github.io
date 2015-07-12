@@ -7,6 +7,8 @@ config(['$routeProvider',
 		});
 		$routeProvider.otherwise({
 			redirectTo: '/home'
+
+		$locationProvider.html5Mode(true);
 		});
 	}
 ]);

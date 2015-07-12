@@ -8,5 +8,4 @@ angular.module('website',[
 ]);
 
 angular.module('website.routes',[]);
-//angular.module('website.controllers',[]);
 angular.module('website.services',[]);
