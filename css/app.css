@@ -3281,7 +3281,7 @@ HERO AREA
 @media only screen and (max-device-width: 600px) {
     #hero {
         overflow: visible;
-        padding-bottom: 200%;   
+        padding-bottom: 50%;   
     }
 }
 
