@@ -155,25 +155,29 @@ PORTFOLIO SECTION
     text-align: center;
 }
 
-#portfolioItems li{
-    min-width: 320px;
-    max-height: 720px;
-    width:31%;
-    float: left;
-    
-    margin: 10px;
-    background: #fff;
-    border-radius: 5px;
-    height:290px;
-    overflow:hidden;
-}
 
-@media only screen and (max-device-width: 480px) {
-    #portfolioItems li{
+
+@media only screen and (max-device-width: 700px) {
+    #portfolioItems {
         clear: both;
         width:95%;
         min-width: 300px;
     }
+}
+
+#portfolioItems li{
+    /*min-width: 320px;*/
+    margin-bottom: 2%;
+    padding: 0px;
+    border-radius: 5px;
+    height:320px;
+    overflow:hidden;
+    background-color: white;
+}
+
+#portfolioItems li:not(:first-child,:last-child) {
+  padding-right:7px;
+  padding-left:7px;
 }
 
 #portfolioItems li:hover{
@@ -343,59 +347,53 @@ FOLLOW BUTTON
 	position: absolute;
 }
 
-.dribbble-follow-button .count u {
-    margin-left: -3px;
-    border-right-color: white;
-}
-
 /*=========================
 MODAL 
 ==========================*/
-.ngdialog.ngdialog-theme-default .ngdialog-content {
-  position:fixed !important;
-  
-  top:0%;
-  right:5%;
-  /*bottom:0%;*/
-  left:5%;
-  width:60%;
-  min-width:320px;
-  /*max-height:750px;*/
-  padding:0px 0px 0px 0px;
-  
-  overflow: hidden;
-}
 
-@media only screen and (max-device-width: 768px) {
-    .ngdialog.ngdialog-theme-default .ngdialog-content{
-        overflow-y:scroll;
-        /*padding: 15px 15px;*/
-        top:1%;
-        width:65%;
-        max-height: 90%;
-    }
-    .addPadding{
-        padding-left: 0%;
-    }
-   
-}
 
-/*.addPadding{
-    padding-left: 10%;
-}*/
-
-.ngdialog.ngdialog-theme-default .ngdialog-content{
-    position: absolute !important;
-}
-.ngdialog-content{
-    overflow: scroll;
-}
-
-.vertical-align {
-    display: table-cell;
-vertical-align: middle;
+.
+.ngdialog.ngdialog-theme-default.ngdialog-content{
 }
 
 .portfolio-details{
     padding: 1em;
+    background-color: black;
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-content {
+  -webkit-animation: ngdialog-flyin .5s;
+  animation: ngdialog-flyin .5s;
+  background: #f0f0f0;
+  border-radius: 5px;
+  color: #444;
+  font-family: 'Helvetica',sans-serif;
+  font-size: 1.1em;
+  line-height: 1.5em;
+  margin: 0 auto;
+  max-width: 100%;
+  padding: 1em 0em 1em 1em;
+  position: relative;
+  width: 70%;
+  height:   95%;
+  overflow-y: scroll;
+  overflow-x: hidden; 
+}
+
+.ngdialog.ngdialog-theme-default {
+  padding-bottom: 0%;
+  padding-top: 5%;
+}
+
+@media only screen and (max-device-width: 480px) {
+    .ngdialog.ngdialog-theme-default .ngdialog-content {
+        clear: both;
+        width:90%;
+        overflow-y: hidden; 
+    }
+}
+
+#images.img{
+    margin-left: auto;
+    margin-right: auto;
 }

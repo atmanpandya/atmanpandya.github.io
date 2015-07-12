@@ -38,11 +38,14 @@ angular.module('website')
     							overlay: true});
 				
 				var modalRatio = $('.ngdialog-content').width()/$('.ngdialog-content').height();
+				//bodyFreezeScroll();
 				/*alert(modalRatio);*/
 			}
-			
+
 			$scope.openInNewTab = function(link){
             	$window.open(link, '_blank');
         	};
+
+        	
 		}
 	]);
