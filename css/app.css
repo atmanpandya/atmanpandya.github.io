@@ -3188,7 +3188,9 @@ body {
     font-family: 'Raleway', sans-serif;
     line-height: 1.8em;
 }
-
+li{
+  list-style-type: none;
+}
 .bigicon {font-size: 3em;}
 h1{font-style:normal; font-weight: 100;line-height: 1}
 h2{font-size: 42px; font-style:normal;}
@@ -3258,7 +3260,7 @@ HERO AREA
 }
 
 .herocontent{
-    padding-top: 100px;
+    padding-top: 10%;
     width: 100%;
     max-width: 900px;
 }
