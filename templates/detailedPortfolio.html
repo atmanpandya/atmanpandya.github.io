@@ -1,6 +1,13 @@
+	
+		<div id="images" ng-class="imgClass" class="row">
+			
+				<img id="arrow-left" src="../img/arrow-left.svg" ng-click="getPreviousData()">	
+					<img ng-src="{{portfolioDetailed.img}}">
+				<img id="arrow-right" src="../img/arrow-right.svg" ng-click="getNextData()">
+		</div>
+		
 
-	<div class="row">
-		<div id="data"class="col-xs-18 col-sm-12 col-lg-5">
+		<div id="data"ng-class="dataClass">
 			<div class="portfolio-details" >
 				<h1>{{portfolioDetailed.name}}</h1>
 				<p>{{portfolioDetailed.description}}</p>
@@ -9,5 +16,5 @@
        			</div>
 			</div>
 		</div>
-			<img id="images"class="col-xs-18 col-sm-12 col-lg-7 img-responsive" ng-src="{{portfolioDetailed.img}}"
-	</div>
+	
+	

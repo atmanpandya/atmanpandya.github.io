@@ -47,33 +47,80 @@ angular.module('website')
 				$scope.testimonials = promise.data;	
 			});
 			
-			$scope.openDetailedView = function(detailedPortfolio){
-				/* FOR LATER USE
-				var img = new Image();
-				img.src = detailedPortfolio.img;
-				alert(img.width + "x" +img.height);
-
-				var ratio = img.width/img.height;
-				alert(ratio);
-
-				if(ratio>1.6)
-					angular.element('.ngdialog-content').css('margin-top', '5%');
-
-				*/
+			$scope.openDetailedView = function(detailedPortfolio,current){
+				$scope.currentIndex = current;
+				//alert(img.width + "x" +img.height);
+				
 				$scope.portfolioDetailed = detailedPortfolio;
 				ngDialog.open({ template: 'templates/detailedPortfolio.html',
     							scope: $scope,
     							overlay: true});
-				
-				var modalRatio = $('.ngdialog-content').width()/$('.ngdialog-content').height();
+
+				$scope.setModalContentRatio(detailedPortfolio);
 				//bodyFreezeScroll();
-				/*alert(modalRatio);*/
+			}
+
+			$scope.setModalContentRatio = function(detailedPortfolio){
+				var img = new Image();
+				img.src = detailedPortfolio.img;
+
+				var ratio = img.width/img.height;
+				
+				if (ratio>1.5){
+            		$scope.dataClass = "col-xs-18 col-sm-12 col-lg-12 img-responsive ";
+            		$scope.imgClass = "col-xs-18 col-sm-12 col-lg-12 img-responsive";
+            	}
+          		else if(ratio>0.7 && ratio < 1){
+            		$scope.dataClass = "col-xs-18 col-sm-12 col-lg-3";
+            		$scope.imgClass = "col-xs-18 col-sm-12 col-lg-9";
+            	}
+			}
+
+			$scope.getPreviousData = function(){
+				var index;
+				if($scope.currentIndex-1 < 0){
+					index = 0;
+				}else{
+					index = --$scope.currentIndex;
+				}
+				$scope.setModalContentRatio($scope.portfolio[index]);
+				$scope.portfolioDetailed = $scope.portfolio[index];
+				$scope.$apply();
+			}
+
+			$scope.getNextData = function(){
+				var index;
+				if($scope.currentIndex+1 == $scope.portfolio.length){
+					index = $scope.currentIndex;
+				}else{
+					index = ++$scope.currentIndex;
+				}
+				$scope.setModalContentRatio($scope.portfolio[index]);
+				$scope.portfolioDetailed = $scope.portfolio[index];
+				
+				$scope.$apply();
 			}
 
 			$scope.openInNewTab = function(link){
             	$window.open(link, '_blank');
         	};
 
-        	
+        	//jQuery scroll To
+        	$('.scrollTo').on('click', function(e){
+			    e.preventDefault();
+			    var target = $($(this).attr("href"));
+			    
+			    $('html, body').stop().animate({
+			       scrollTop: target.offset().top
+			    }, 1000);
+			});
+
+        	//For left and right shortcuts
+        	$(document).keydown(function(e) {
+    			if (e.keyCode == 39)
+			        $scope.getNextData();
+			    else if (e.keyCode == 37)
+			        $scope.getPreviousData();
+			});
 		}
 	]);

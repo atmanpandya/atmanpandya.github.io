@@ -3,7 +3,19 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">   
+    <style>
+        #arrow{
+            width: 5%;
+            height: 5%;
+            margin: auto;
+            padding-bottom: 10%;
+        };
+        #personal-photo{
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+        }
+    </style> 
           
     <!-- ===========================
     THEME INFO
@@ -52,7 +64,7 @@
   
    <!--LOADS ALL UNREQUIRED JS AFTER PAGE IS LOADED-->
    </head>
-    <body data-spy="scroll" ng-controller="mainController">
+    <body data-spy="scroll" ng-controller="mainController" >
     <script type="text/javascript">
         function downloadJSAtOnload() {
         
@@ -88,7 +100,7 @@
         <div id="hero">           
             <div class="container herocontent">  
                 <div class="wow">
-                    <img src="../img/profile.jpg"id="personal-photo" class="img-responsive wow bounceInDown" data-wow-duration="2s" ng-src="">
+                    <img src="../img/profile-me-1.png" id="personal-photo" class="img-responsive wow fadeInDownBig" ng-src="">
                 </div>             
                 <h2 class="wow bounceInLeft" data-wow-duration="2s">Atman Pandya</h2>                
                 <h4 class="wow bounceInRight" data-wow-duration="2s">Your guy for all things creative and digital!</h4>            
@@ -97,7 +109,10 @@
             <!-- Featured image on the Hero area 
             <img class="heroshot wow bounceInUp" data-wow-duration="4s" src="img/hero-img.png" alt="Featured Work"> 
             -->           
-        </div><!--HERO AREA END-->        
+        </div><!--HERO AREA END-->
+        <a class="scrollTo" href="#about"><img id="arrow" src="img/arrow-down.svg" class="img-responsive animated pulse infinite"></a>
+
+         
         
         <!-- ===========================
          NAVBAR START
@@ -113,7 +128,7 @@
                            <span class="icon-bar"></span>
                         </button>
                         
-                           <a class="navbar-brand" href="#hero">
+                           <a class="navbar-brand scrollTo" href="#hero">
                             <!-- Replace Drifolio Bootstrap with your Site Name and remove icon-grid to remove the placeholder icon -->
                             <span class="brandicon icon-grid"></span>
                             <span class="brandname">Atman Pandya</span>
@@ -122,10 +137,10 @@
 
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right"><!--YOUR NAVIGATION ITEMS STRAT BELOW-->
-                        <li><a href="#about"><span class="btnicon icon-user"></span>About</a></li>
-                        <li><a href="#services"><span class="btnicon icon-cup"></span>Services</a></li>
-                        <li><a href="#portfolio"><span class="btnicon icon-rocket"></span>Portfolio</a></li>
-                        <li><a href="#testimonials"><span class="btnicon icon-bubble"></span>Testimonials</a></li>
+                        <li><a class="scrollTo" href="#about"><span class="btnicon icon-user"></span>About</a></li>
+                        <li><a class="scrollTo" href="#services"><span class="btnicon icon-cup"></span>Services</a></li>
+                        <li><a class="scrollTo" href="#portfolio"><span class="btnicon icon-rocket"></span>Portfolio</a></li>
+                        <li><a class="scrollTo" href="#testimonials"><span class="btnicon icon-bubble"></span>Testimonials</a></li>
                         
                         <!--don't forget to replace my email address below with yours-->
                         <li><a href="mailto:{{about.email}}"><span class="btnicon icon-envelope-open"></span>Contact</a></li>
@@ -171,7 +186,7 @@
          </div><!-- RIGHT PART OF THE ABOUT SECTION END -->        
      </div><!-- ABOUT SECTION END -->
         
-    <hr><!-- SECTION SEPARATOR LINE -->
+    
         
     <!-- ===========================
     SERVICE SECTION START
@@ -218,11 +233,14 @@
         </div><!-- PORTFOLIO SECTION HEAD END -->   
         
         <!-- PORTFOLIO ITEMS START -->
-        <div class="container">
-                <div id="portfolioItems" ng-repeat="item in portfolio"> 
-                    <li class="col-xs-12 box col-sm-6 col-md-4" ng-click="openDetailedView(item)">
-                        <h3  data-toggle="modal" data-target=".bs-example-modal-sm"><a href="">{{item.name}}</h3></a>
+        <div class="container col-xs-12 col-sm-12 col-md-12">
+                <div id="portfolioItems" ng-repeat="item in portfolio" ng-init="currentIndex = $index"> 
+                    <li class="col-xs-12 box col-sm-6 col-md-4" ng-click="openDetailedView(item,currentIndex)">
+                        <div id="description">
+                            <h3  data-toggle="modal" data-target=".bs-example-modal-sm"><a href="">{{item.name}}</h3></a>
+                        </div>
                         <img ng-src={{item.img}}>
+                        
                     </li>
                 </div>
         </div><!-- PORTFOLIO ITEMS END -->
@@ -239,13 +257,13 @@
     =========================== -->
      <div id="clients">
          <div class="container">
-             <div class="col-md-3">
+             <div class="col-xs-9 col-md-3">
                  <h4>Proudly worked with:</h4>
              </div>
              <div class="col-md-9">
                  <ul><!--CLIENTS LOGO-->
-                     <li class="pull-right"><img class="img-responsive" src="img/mahindra.png" alt="Mahindra and Mahindra"></li>
-                     <li class="pull-right"><img class="img-responsive"src="img/csi.jpg" alt="Computer Society Of India"></li>
+                     <li class="col-xs-9 col-md-4 pull-right"><img class="img-responsive" src="img/mahindra.png" alt="Mahindra and Mahindra"></li>
+                     <li class="col-xs-9 col-md-4 pull-right"><img class="img-responsive"src="img/csi.jpg" alt="Computer Society Of India"></li>
                  </ul><!--CLIENTS LOGO END-->
              </div>
          </div>
@@ -289,11 +307,11 @@
              
             <div class="footerlinks"><!-- FOOTER LINKS START -->            
                 <ul>
-                    <li><a href="#hero">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a class="scrollTo" href="#hero">Home</a></li>
+                    <li><a class="scrollTo" href="#about">About</a></li>
+                    <li><a class="scrollTo" href="#services">Services</a></li>
+                    <li><a class="scrollTo" href="#portfolio">Portfolio</a></li>
+                    <li><a class="scrollTo" href="#testimonials">Testimonials</a></li>
 
                     <!--replace the email address below with your email address-->
                     <li><a href="mailto:{{about.email}}">Contact</a></li>                   
