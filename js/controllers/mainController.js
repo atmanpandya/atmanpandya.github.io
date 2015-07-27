@@ -28,9 +28,35 @@
 });
   }(jQuery));
 
-angular.module('website')
-	.controller('mainController',['$scope','$window','dataProvider','ngDialog',
-		function($scope,$window,dataProvider,ngDialog){
+$(document).ready(function() {
+    $("#images").mouseover(function() {
+        $(".arrows").animate({
+            opacity: 0
+        }, 300);
+    }).mouseout(function() {
+        $(".arrows").animate({
+            opacity: 1
+        }, 300)
+    });
+});
+
+	angular.module('website')
+		.directive('animateOnChange', function($animate,$timeout) {
+		  return function(scope, elem, attr) {
+		      scope.$watch(attr.animateOnChange, function(nv,ov) {
+		        if (nv!=ov) {
+		          var c = nv > ov?'change-up':'change';
+		          $animate.addClass(elem,c).then(function() {
+		           // $timeout(function() {$animate.removeClass(elem,c);});
+		          });
+		        }
+		      });
+		   };
+		})
+
+//angular.module('website')
+	.controller('mainController',['$scope','$window','dataProvider','ngDialog','$timeout',
+		function($scope,$window,dataProvider,ngDialog,$timeout){
 			dataProvider.getAboutData().then(function(promise){
 				$scope.about = promise.data;	
 			});
@@ -78,27 +104,30 @@ angular.module('website')
 
 			$scope.getPreviousData = function(){
 				var index;
-				if($scope.currentIndex-1 < 0){
-					index = 0;
-				}else{
-					index = --$scope.currentIndex;
-				}
-				$scope.setModalContentRatio($scope.portfolio[index]);
-				$scope.portfolioDetailed = $scope.portfolio[index];
-				$scope.$apply();
+				$timeout(function() {
+
+					if($scope.currentIndex-1 < 0){
+						index = 0;
+					}else{
+						index = --$scope.currentIndex;
+					}
+					$scope.setModalContentRatio($scope.portfolio[index]);
+					$scope.portfolioDetailed = $scope.portfolio[index];
+				});
+				
 			}
 
 			$scope.getNextData = function(){
 				var index;
-				if($scope.currentIndex+1 == $scope.portfolio.length){
-					index = $scope.currentIndex;
-				}else{
-					index = ++$scope.currentIndex;
-				}
-				$scope.setModalContentRatio($scope.portfolio[index]);
-				$scope.portfolioDetailed = $scope.portfolio[index];
-				
-				$scope.$apply();
+				$timeout(function() {
+					if($scope.currentIndex+1 == $scope.portfolio.length){
+						index = $scope.currentIndex;
+					}else{
+						index = ++$scope.currentIndex;
+					}
+					$scope.setModalContentRatio($scope.portfolio[index]);
+					$scope.portfolioDetailed = $scope.portfolio[index];
+				});
 			}
 
 			$scope.openInNewTab = function(link){
@@ -124,3 +153,4 @@ angular.module('website')
 			});
 		}
 	]);
+

@@ -3,6 +3,7 @@
 angular.module('website',[
 	'ngRoute',
 	'ngDialog',
+	'ngAnimate',
 	'website.routes',
 	'website.services'
 ]);

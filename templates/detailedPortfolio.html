@@ -1,9 +1,8 @@
 	
 		<div id="images" ng-class="imgClass" class="row">
-			
-				<img id="arrow-left" src="../img/arrow-left.svg" ng-click="getPreviousData()">	
-					<img ng-src="{{portfolioDetailed.img}}">
-				<img id="arrow-right" src="../img/arrow-right.svg" ng-click="getNextData()">
+				<img class= "arrows" id="arrow-left" src="../img/arrow-left.svg" ng-click="getPreviousData()">	
+			   	<img animate-on-change="portfolioDetailed.img" ng-src="{{portfolioDetailed.img}}">
+				<img class="arrows" id="arrow-right" src="../img/arrow-right.svg" ng-click="getNextData()">
 		</div>
 		
 
@@ -16,5 +15,6 @@
        			</div>
 			</div>
 		</div>
+		<hr class="separator"> 
 	
 	
