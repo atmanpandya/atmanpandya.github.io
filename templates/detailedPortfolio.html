@@ -1,14 +1,14 @@
 	
-		<div id="images" ng-class="imgClass" class="row">
-				<img class= "arrows" id="arrow-left" src="../img/arrow-left.svg" ng-click="getPreviousData()">	
-			   	<img animate-on-change="portfolioDetailed.img" ng-src="{{portfolioDetailed.img}}">
+		<div id="images" class="row col-xs-18 col-sm-9 col-lg-9">	
+			   	<img class="absolute-center" ng-src="{{portfolioDetailed.img}}">
+			   	<img class= "arrows" id="arrow-left" src="../img/arrow-left.svg" ng-click="getPreviousData()">
 				<img class="arrows" id="arrow-right" src="../img/arrow-right.svg" ng-click="getNextData()">
 		</div>
 		
 
-		<div id="data"ng-class="dataClass">
+		<div id="data" class= "col-xs-18 col-sm-3 col-lg-3">
 			<div class="portfolio-details" >
-				<h1>{{portfolioDetailed.name}}</h1>
+				<h2>{{portfolioDetailed.name}}</h2>
 				<p>{{portfolioDetailed.description}}</p>
 				<div ng-if="portfolioDetailed.link != '' ">
           			<a href="" ng-click="openInNewTab(portfolioDetailed.link)">More Info</a>

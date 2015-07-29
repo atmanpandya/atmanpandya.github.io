@@ -77,30 +77,36 @@ $(document).ready(function() {
 				$scope.currentIndex = current;
 				//alert(img.width + "x" +img.height);
 				
+				//$scope.setModalContentRatio(detailedPortfolio);
+
 				$scope.portfolioDetailed = detailedPortfolio;
 				ngDialog.open({ template: 'templates/detailedPortfolio.html',
     							scope: $scope,
+    							
     							overlay: true});
 
-				$scope.setModalContentRatio(detailedPortfolio);
 				//bodyFreezeScroll();
 			}
 
-			$scope.setModalContentRatio = function(detailedPortfolio){
+
+			/*$scope.setModalContentRatio = function(detailedPortfolio){
 				var img = new Image();
 				img.src = detailedPortfolio.img;
 
-				var ratio = img.width/img.height;
-				
-				if (ratio>1.5){
-            		$scope.dataClass = "col-xs-18 col-sm-12 col-lg-12 img-responsive ";
-            		$scope.imgClass = "col-xs-18 col-sm-12 col-lg-12 img-responsive";
-            	}
-          		else if(ratio>0.7 && ratio < 1){
-            		$scope.dataClass = "col-xs-18 col-sm-12 col-lg-3";
-            		$scope.imgClass = "col-xs-18 col-sm-12 col-lg-9";
-            	}
-			}
+				//var ratio = img.width/img.height;
+				img.onload = function() {
+	  				var ratio = this.width / this.height;
+	  				if (ratio>1.5){
+	            		$scope.dataClass = "col-xs-18 col-sm-12 col-lg-12 img-responsive ";
+	            		$scope.imgClass = "col-xs-18 col-sm-12 col-lg-12 img-responsive";
+	            	}
+	          		else if(ratio>0.7 && ratio < 1){
+	            		$scope.dataClass = "col-xs-18 col-sm-12 col-lg-3";
+	            		$scope.imgClass = "col-xs-18 col-sm-12 col-lg-9";
+	            	}
+				}
+				alert(ratio);
+			}*/
 
 			$scope.getPreviousData = function(){
 				var index;
@@ -111,7 +117,7 @@ $(document).ready(function() {
 					}else{
 						index = --$scope.currentIndex;
 					}
-					$scope.setModalContentRatio($scope.portfolio[index]);
+					//$scope.setModalContentRatio($scope.portfolio[index]);
 					$scope.portfolioDetailed = $scope.portfolio[index];
 				});
 				
@@ -125,7 +131,7 @@ $(document).ready(function() {
 					}else{
 						index = ++$scope.currentIndex;
 					}
-					$scope.setModalContentRatio($scope.portfolio[index]);
+					//$scope.setModalContentRatio($scope.portfolio[index]);
 					$scope.portfolioDetailed = $scope.portfolio[index];
 				});
 			}

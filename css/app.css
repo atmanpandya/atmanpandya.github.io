@@ -127,22 +127,17 @@ hr.separator{
     margin-right: 10px;
 }
 
+.absolute-center{
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+}
+
 
 /*================================
 HERO AREA
 ================================*/
 #hero{
-    color: #fff;
-    text-align: center;
-    /*background: url(../img/trianglify-background.svg)no-repeat; /*your background image*/
-    background:url(../img/paper-bg-long.png)no-repeat;
-    color:black;
-    max-height: 880px;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-color: #DDDDDD;
-    height:60vh;
 }
 
 .herocontent{
@@ -160,13 +155,10 @@ HERO AREA
 @media only screen and (max-device-width: 600px) {
     
     #images{
-    display: inline;
     max-height: 100%;
     max-width: 100%;
+    height:initial  !important;
   }
-    .portfolio-details{
-      margin-top: -15%;
-    }
     #data{
       padding: 0px;
     }
@@ -184,16 +176,44 @@ and (max-device-width : 480px) {
   
   #arrow-left, #arrow-right{
     display: none;
-    top:-100%;
+    top:-100000%;
   }
   #arrow{
     width: 20vw;
+    display:  none;
   }
 
   #hero {
     overflow: visible;
-    padding-bottom: 10%;   
+    padding-bottom: 10%;
+    background-position-x: 55%;
+    background-position-y: 90%;
+    background-attachment: initial;
   }
+
+  #portfolioItems li{
+      height:   400px;
+  }
+
+  .absolute-center{
+    margin: inherit ;
+    position: inherit ;
+    top: inherit  ; left: inherit ; bottom: inherit  ; right: inherit  ;
+}
+
+#data{
+  padding-left:   0px;
+}
+
+.custom-modal{
+  width:  90vw !important ;
+  overflow:   hidden;
+  position:   initial;
+  margin: auto;
+}
+
+
+
 }
 
 /* Smartphones (landscape) ----------- */
@@ -255,15 +275,11 @@ only screen and (min-device-pixel-ratio : 1.5) {
 CLIENTS SECTION
 ================================*/
 #clients{
-    padding-top: 30px;
-}
-#clients h4{
-    text-transooteorm: uppercase;
     padding-top: 10px;
 }
-
-#clients .col-md-4{
-    padding-bottom: 0;
+#clients h4{
+    text-transform: none  ;
+    padding-bottom : 10px;
 }
 
 #clients ul{float: right}
@@ -271,6 +287,10 @@ CLIENTS SECTION
 #clients li{
     display: inline;
     margin-right: 35px;
+}
+
+#clients h4{
+  text-align:   center; 
 }
 #clients li:last-child{
     margin-right: 0px;
@@ -301,18 +321,32 @@ ABOUT SECTION
 PORTFOLIO SECTION
 ================================*/
 #portfolio{
-    background: #222222;
     margin-top: 0px;
     /*background-image: url("../img/bg-portfolio.jpg");*/
     text-align: center;
     color: white;
+    padding:  0px;
+    width:  100%;
+}
+
+#portfolio.container{
+    margin: auto;
+    width: 100%;
+    padding:0px;
+}
+
+#portfolio .sectionhead{
+  background-color:   #222222;
+}
+
+#portfolioItems{
+  padding:0px 3px 0px 3px;
 }
 
 #portfolioItems li{
     /*min-width: 320px;*/
-    margin-bottom: 0%;
     padding: 0px;
-    height:27vw;
+    height:50vh;
     overflow:hidden;
     border:3px solid white;
     
@@ -342,7 +376,7 @@ PORTFOLIO SECTION
   background-color: #999999;
   padding:5px;
   transition: all .4s ease-out;
-  opacity: 0.5;
+  opacity: 0.3;
 }
 
 #arrow-right{
@@ -350,12 +384,12 @@ PORTFOLIO SECTION
   top:45%;
   width: 2em;
   height: 2em;
-  left:95%;
+  left:90%;
   border-radius: 100%;
   background-color: #999999;
   padding:5px;
   transition: all .4s ease-out;
-  opacity: 0.5;
+  opacity: 0.3;
 }
 
 #arrow-left:hover,#arrow-right:hover{
@@ -464,6 +498,21 @@ MODAL
     background-color: black;
 }
 
+.custom-modal{
+  width:  30vw;
+  height:   30vh;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background-color:   #E0E0E0;
+  color:  black;
+  opacity:   1;
+  text-align:   center; 
+  box-shadow: 1px 2px 25px rgba(100, 120, 110, 0.4);
+}
+
 .ngdialog.ngdialog-theme-default .ngdialog-content {
   -webkit-animation: ngdialog-flyin .5s;
   animation: ngdialog-flyin .5s;
@@ -474,11 +523,14 @@ MODAL
   font-size: 1.1em;
   line-height: 1.5em;
   margin: 0 auto;
-  max-width: 100%;
   position: relative;
-  width: 100vw;
-  height:   100vh;
+  max-width: 85vw;
+  max-height:   82vh;
   overflow-x: hidden; 
+
+  margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
 }
 
 .ngdialog.ngdialog-theme-default {
@@ -491,14 +543,19 @@ MODAL
         clear: both;
         width:90%;
         overflow-y: scroll; 
+        height:   90%;
+        margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
     }
 }
 
 #data{
+  padding-left:   0px;
 }
-
-#data h1,p,a{
-  padding-left: 10px;
+#data h2{
+  color:#DDDDDD;
+  font-weight:  100;
 }
 
 #images{
@@ -506,12 +563,10 @@ MODAL
     padding-left: 0px;
     height: 100%;
     background-color: #212121;
+    margin:   0px;
 }
 
 #images img{
-  display: block;
-  vertical-align: middle;
-  margin:auto;
   max-height: 100%;
   max-width: 100%;
   /*border:5px solid white;*/
